@@ -1,0 +1,43 @@
+<!--
+  1.) Create a method to check if the number is odd or even.
+  2.) Create a method to return larger of the two numbers.
+  3.) Create a method to convert Celsius to Fahrenheit. F=(9/5)*C +32.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>practice5</title>
+</head>
+<body>
+  <script>
+    
+    function oddOrEven(number)
+    {
+      if(number%2==0)
+      {
+         console.log("The number is even");
+      }
+      else{
+         console.log("The number is odd");
+      }
+    }
+    oddOrEven(9);
+
+    function largeNumber(number1,number2)
+    {
+        return number1>number2?number1:number2;
+    }
+    console.log(largeNumber(9,3));
+
+    function convertor(celsius)
+    {
+        return (9/5)*celsius +32;
+
+    }
+    console.log(convertor(30));
+    
+  </script>
+  
+</body>
+</html>
