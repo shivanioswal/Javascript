@@ -1,0 +1,64 @@
+<!--
+  1.) Create an object to represent a product from myntra
+  2.) Create an object with two refrences and log changes to one object by changing another one
+  3.) Use bracket notation to display delivery time
+  4.) Given an object {message: 'good job', status: 'complete'},
+  use destructuring to create two variable message and status
+  5.) Add function isIdenticalProduct to compare two product objects.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Practice6</title>
+</head>
+<body>
+  <script>
+    let product={
+      itemName: 'T-shirt',
+      company: 'Mango',
+      price: 861,
+      'delivery-Time': 'same day delivery',
+      isIdenticalProduct()
+      {
+        if(product==product1)
+        {
+          console.log("Objects are Identical");
+        }
+        else
+        {
+          console.log("Objects are not identical");
+        }
+      }
+    };
+
+    let product1=product;
+    console.log(product);
+    console.log(product1); //Both the references show same value here.
+
+    console.log(product.company='Banana');
+    console.log(product1); //When we make changes to 1 object its references also make the same change and this happens because objects are 
+    //always passed by reference and NOT values.
+    
+     
+    console.log(product['delivery-Time']);
+
+    let object={
+      message: 'Good Job',
+      status: 'Complete',
+    };
+    let {message}=object;
+    let {status}=object; //Destructuring of an Object
+    console.log(message);
+    console.log(status);
+    let message1=object.message; //Normal way of destructing an Object
+    console.log(message1);
+
+    product.isIdenticalProduct();
+
+
+
+
+  </script>
+  
+</body>
+</html>
