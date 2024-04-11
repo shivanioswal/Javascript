@@ -1,0 +1,69 @@
+<!--
+1.) Display good morning,afternoon and night based on current time.
+2.) Add the name to output too
+3.) Create a button which shows the number how many times it has been pressed.
+  Also it has different colors when it has been pressed odd or even times.
+  The click count should also survive the browser refresh 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="Practice7.css" type="text/css" />
+  <title>Practice7</title>
+</head>
+<body>
+
+  <button id="my-button" onclick="buttonPressed();"></button>
+  
+
+
+  <script>
+
+      let noOfTimesClicked = localStorage.getItem('noOfTimesClicked') || 0;
+
+      function buttonPressed() {
+        noOfTimesClicked++;
+        localStorage.setItem('noOfTimesClicked', noOfTimesClicked);
+        updateButton();
+      }
+
+      function updateButton() {
+        let button = document.querySelector('#my-button');
+        if (noOfTimesClicked % 2 === 0) {
+          button.classList.remove('js-odd');
+          button.classList.add('js-even');
+        } else {
+          button.classList.remove('js-even');
+          button.classList.add('js-odd');
+        }
+        button.innerText = noOfTimesClicked;
+      }
+
+      updateButton();
+    
+    
+    
+
+    let name="Shivani";
+    let date=new Date();
+
+    if(date.getHours<12 && date.getHours()>5)
+    {
+      console.log(`Good Morning ${name}`);
+    }
+    else if(date.getHours()>=12 && date.getHours()<17)
+    {
+      console.log(`Good Afternoon ${name}`);
+    }
+    else if(date.getHours()>=17 && date.getHours()<20)
+    {
+      console.log(`Good Evening ${name}`);
+    }
+    else if(date.getHours()<5 || date.getHours()>=20)
+      {
+        console.log(`Good Night ${name}`);
+      }
+  </script>
+  
+</body>
+</html>
